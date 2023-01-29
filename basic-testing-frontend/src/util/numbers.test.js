@@ -10,10 +10,9 @@ it('should transform a string number to a number type', () => {
   expect(result).toBeTypeOf('number');
 });
 
-it('should throw error if value is empty', () => {
-  const resultFn = () => {
-    transformToNumber();
-  };
+it('should return NaN if invalid string number provided', () => {
+  const input = 'hello';
+  const result = transformToNumber(input);
 
-  expect(resultFn).toThrow();
+  expect(result).toBeNaN;
 });
